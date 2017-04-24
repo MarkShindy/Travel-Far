@@ -1,0 +1,164 @@
+/* Can be given a max-width for desktop layout. */
+.row
+{
+	max-width: 1200px;
+	margin: auto;
+}
+
+#mainHeader
+{
+	margin-top: 1rem;
+	text-align: center;	
+}
+#than
+{
+    text-align: center;
+}
+a.brand
+{
+	font-size: 2rem;	
+	text-decoration: none;
+	color: #808080;
+}
+#mainNav
+{
+	margin: 1rem 0;
+	padding: 0;
+	list-style-type: none;	
+}
+#mainNav a
+{
+	display: block;	
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000000;
+}
+
+body
+{
+	background-color: #9be3f0;
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+.row
+{	
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+#frog
+{
+	text-align: center;
+}
+
+#hing 
+{
+	margin-top: 1rem;
+	text-align: center;
+	color: #ffffff;
+	background-color:#004080;
+	height: 50px;
+	padding: 1rem;
+	
+}	
+footer
+{
+	text-align: center;
+	padding: 1rem;
+}
+#rawr p
+{
+	word-spacing: 10px;
+}
+#topHeader
+{
+	margin-top: 1rem;
+	text-align: center;	
+}
+#main > div
+{
+	margin: 1rem;
+}
+#workpls
+{
+	width: 100%;
+	margin-bottom: 10px;
+}
+.lkj
+{
+	background-color: #45a9ba;
+	text-align: center;
+	padding: 5px;
+}
+#fong
+{
+	background-color: #45a9ba;
+	text-align: center;
+	padding: 5px;
+}
+#fork
+{
+    text-align: center;
+    margin: auto;
+}
+	@media screen and (min-width: 768px) 
+{
+
+#main
+{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.lol
+{
+    order: -1;
+}
+#workpls
+{
+	height: 304px;
+	width: 477px;
+	margin-bottom: 10px;
+}
+
+#mainHeader
+{
+    display: flex;
+    justify-content: space-between;	
+    align-items: baseline;
+}
+
+#mainNav li
+{
+    display: inline-block;
+    margin: 10px;
+}
+a.brand
+{
+    margin-left: 40px;
+}
+
+lable
+{
+	text-align: left;
+}
+}
+
+	
+	@media screen and (max-width: 460px)
+	 
+{
+#workpls
+{
+	margin: auto;
+}
+#fork
+{
+    text-align: left;
+}
+}
+
+
+	
+	
+	
