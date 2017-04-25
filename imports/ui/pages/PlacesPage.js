@@ -2,8 +2,10 @@ import React, {
   Component
 } from 'react';
 import PlacesItem from '../components/PlacesItem';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Locations } from '../../api/locations.js';
 
-export default class PlacesPage extends Component {
+class PlacesPage extends Component {
 
   render() {
 
@@ -46,14 +48,15 @@ export default class PlacesPage extends Component {
           <h1>Places We Go</h1>
         </div>
         <div className="row" id="main">
-          {places.map(function(place) {
-            return (
-              <PlacesItem place={place} key={place.key}/>
-            );
-          })}
+          PlacesPage.propTypes = {
+            locations: React.PropTypes.array.isRequired,
+          };
 
-
-
+          export default createContainer(() => {
+            return {
+              locations: Locations.find({}).fetch(),
+            };
+          }, PlacesPage);
 
         </div>
         <div className="container3">
