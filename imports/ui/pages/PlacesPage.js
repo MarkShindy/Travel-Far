@@ -48,15 +48,11 @@ class PlacesPage extends Component {
           <h1>Places We Go</h1>
         </div>
         <div className="row" id="main">
-          PlacesPage.propTypes = {
-            locations: React.PropTypes.array.isRequired,
-          };
-
-          export default createContainer(() => {
-            return {
-              locations: Locations.find({}).fetch(),
-            };
-          }, PlacesPage);
+          {places.map(function(place) {
+            return (
+              <PlacesItem place={place} key={place.key}/>
+            );
+          })}
 
         </div>
         <div className="container3">
@@ -75,3 +71,13 @@ class PlacesPage extends Component {
     );
   }
 }
+
+PlacesPage.propTypes = {
+  locations: React.PropTypes.array.isRequired,
+};
+
+export default createContainer(() => {
+  return {
+    locations: Locations.find({}).fetch(),
+  };
+}, PlacesPage);
