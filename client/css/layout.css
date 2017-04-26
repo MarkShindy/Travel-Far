@@ -8,7 +8,7 @@
 #mainHeader
 {
 	margin-top: 1rem;
-	text-align: center;	
+	text-align: center;
 }
 #than
 {
@@ -16,7 +16,7 @@
 }
 a.brand
 {
-	font-size: 2rem;	
+	font-size: 2rem;
 	text-decoration: none;
 	color: #808080;
 }
@@ -24,11 +24,11 @@ a.brand
 {
 	margin: 1rem 0;
 	padding: 0;
-	list-style-type: none;	
+	list-style-type: none;
 }
 #mainNav a
 {
-	display: block;	
+	display: block;
 	margin-bottom: 1rem;
 	font-size: 1rem;
 	text-decoration: none;
@@ -42,7 +42,7 @@ body
 	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 .row
-{	
+{
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
@@ -50,8 +50,29 @@ body
 {
 	text-align: center;
 }
+.flex-container
+{
+	padding: 0;
+	margin: auto;
 
-#hing 
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  justify-content: space-around;
+
+}
+.flex-item
+{
+  padding: 5px;
+  width: 400px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+#hing
 {
 	margin-top: 1rem;
 	text-align: center;
@@ -59,8 +80,8 @@ body
 	background-color:#004080;
 	height: 50px;
 	padding: 1rem;
-	
-}	
+
+}
 footer
 {
 	text-align: center;
@@ -73,11 +94,12 @@ footer
 #topHeader
 {
 	margin-top: 1rem;
-	text-align: center;	
+	text-align: center;
 }
 #main > div
 {
 	margin: 1rem;
+
 }
 #workpls
 {
@@ -101,7 +123,7 @@ footer
     text-align: center;
     margin: auto;
 }
-	@media screen and (min-width: 768px) 
+	@media screen and (min-width: 768px)
 {
 
 #main
@@ -109,6 +131,7 @@ footer
    display: flex;
    flex-direction: row;
    justify-content: space-between;
+	 min-width: 1700px;
 }
 .lol
 {
@@ -124,7 +147,7 @@ footer
 #mainHeader
 {
     display: flex;
-    justify-content: space-between;	
+    justify-content: space-between;
     align-items: baseline;
 }
 
@@ -144,9 +167,9 @@ lable
 }
 }
 
-	
+
 	@media screen and (max-width: 460px)
-	 
+
 {
 #workpls
 {
@@ -156,9 +179,10 @@ lable
 {
     text-align: left;
 }
+#main {
+	min-width: 440px;
 }
-
-
-	
-	
-	
+.flex-item {
+	width: 100%;
+}
+}

@@ -19,7 +19,7 @@ render() {
         <div className="lkj">
           <h1>Places We Go</h1>
         </div>
-        <div className="row" id="main">
+        <div className="row flex-container" id="main">
           {locations.map(function(place) {
             return (
               <PlacesItem place={place} key={place.key}/>

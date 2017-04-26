@@ -8,7 +8,7 @@ export default class HomePage extends Component {
     } = this.props;
     return (
 
-      <div className="place-item">
+      <div className="flex-item">
         <h2>{place.title}</h2>
         <p>{place.description}</p>
         <h3>{place.price}</h3>
