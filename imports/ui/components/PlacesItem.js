@@ -10,7 +10,7 @@ export default class HomePage extends Component {
 
       <div className="flex-item">
         <h2>{place.title}</h2>
-        <p>{place.description}</p>
+        <p className="show">{place.description}</p>
         <h3>{place.price}</h3>
       </div>
 

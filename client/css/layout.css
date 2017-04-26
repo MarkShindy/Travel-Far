@@ -99,7 +99,10 @@ footer
 #main > div
 {
 	margin: 1rem;
-
+}
+#main
+{
+	min-width: 1700px;
 }
 #workpls
 {
@@ -131,7 +134,6 @@ footer
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-	 min-width: 1700px;
 }
 .lol
 {
@@ -166,7 +168,18 @@ lable
 	text-align: left;
 }
 }
+@media screen  (max-width: 600px)
 
+{
+#main
+{
+	min-width: 440px;
+}
+.flex-item
+{
+	width: 100%;
+}
+}
 
 	@media screen and (max-width: 460px)
 
@@ -179,10 +192,5 @@ lable
 {
     text-align: left;
 }
-#main {
-	min-width: 440px;
-}
-.flex-item {
-	width: 100%;
-}
+
 }
