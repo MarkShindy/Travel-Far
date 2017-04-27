@@ -60,7 +60,8 @@ body
   display: -webkit-flex;
   display: flex;
 
-  justify-content: space-around;
+	flex-flow: row wrap;
+  justify-content: center;
 
 }
 .flex-item
@@ -128,7 +129,6 @@ footer
 {
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
 }
 .lol
 {
