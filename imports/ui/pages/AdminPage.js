@@ -13,16 +13,53 @@ class AdminPage extends Component {
     this.state = {
       view: 'list',
       locationId: null,
+      form: {},
     }
   }
   editLocation(locationId) {
+    let location = {};
+    if (locationId !== null) {
+      location = _.find(this.props.locations, {_id: locationId})
+    }
+    console.log(location)
     this.setState({
       view: 'edit',
-      locationId:locationId,
+      locationId: locationId,
+      form: {
+        key: location.key || '',
+        title: location.title || '',
+        description: location.description || '',
+        price: location.price || '',
+      }
     })
   }
+
+  changeValue(name, value) {
+    const newForm = Object.assign({}, this.state.form);
+    newForm[name] = value;
+    this.setState({
+      form: newForm,
+    })
+  }
+  saveLocation() {
+    Locations.upsert(this.state.locationId, {
+      $set: Object.assign({}, this.state.form, { updatedAt: (new Date).toISOString()}),
+      $setOnInsert: {
+        createdAt: (new Date).toISOString(),
+      }
+    })
+    this.setState({
+      view: 'list',
+      locationId: null,
+      form: {},
+    })
+  }
+  deleteLocation(location) {
+    Locations.remove(location._id);
+  }
+
   render() {
-    const {view, locationId} = this.state;
+    const {view, locationId, form} = this.state;
     const {userId, locations} = this.props;
     let display = null;
 
@@ -34,37 +71,33 @@ class AdminPage extends Component {
       )
     }
     if (view === 'edit') {
-      let location = {};
-      if (locationId !== null) {
-        location = _.find(locations, {_id: locationId})
-      }
       display = (
         <form id="fork">
 
           <label htmlFor="element_1_1">Key</label>
           <div>
-            <input name="element_1_1" id="element_1_1" type="text" value={location.title}/>
+            <input name="element_1_1" id="element_1_1" type="text" value={form.key} onChange={(event) => { this.changeValue('key', event.target.value)}}/>
           </div>
 
           <br/>
 
           <label htmlFor="element_1_2">Title</label>
           <div>
-            <input name="element_1_2" id="element_1_2" type="text" value=""/>
+            <input name="element_1_2" id="element_1_2" type="text" value={form.title} onChange={(event) => { this.changeValue('title', event.target.value)}}/>
           </div>
 
           <br/>
 
           <label htmlFor="element_1_3">Description</label>
           <div>
-            <textarea name="element_1_3" id="element_1_3" cols="30" rows="10">{location.description}</textarea>
+            <textarea name="element_1_3" id="element_1_3" cols="30" rows="10" value={form.description} onChange={(event) => { this.changeValue('description', event.target.value)}}/>
           </div>
 
           <br/>
 
           <label htmlFor="element_1_4">Price</label>
           <div>
-            <input name="element_1_4" id="element_1_4" type="text" value=""/>
+            <input name="element_1_4" id="element_1_4" type="text" value={form.price} onChange={(event) => { this.changeValue('price', event.target.value)}}/>
           </div>
 
           <br/>
@@ -74,7 +107,9 @@ class AdminPage extends Component {
               view: 'list'
             })
           }}>Cancel</button>
-          <button>Update</button>
+        <button onClick={() => {
+            this.saveLocation();
+          }}>Update</button>
 
         </form>
       )
@@ -84,7 +119,9 @@ class AdminPage extends Component {
           <div className="dataActions">
             <button onClick={() => {
               this.setState({
-                view: 'edit'
+                view: 'edit',
+                form: {},
+                locationId: null,
               })
             }}>Add new location!</button>
           </div>
@@ -119,7 +156,11 @@ class AdminPage extends Component {
                         locationId: place._id,
                       })
                     }}>Edit</button>
-                      <a href="#delete">delete</a>
+                  <button onClick={() => {
+                      this.deleteLocation(place);
+                    }}>
+                    Delete
+                  </button>
                     </td>
                   </tr>
 
