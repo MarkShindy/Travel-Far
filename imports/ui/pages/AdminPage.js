@@ -13,7 +13,12 @@ class AdminPage extends Component {
     this.state = {
       view: 'list',
       locationId: null,
-      form: {},
+      form: {
+        key: '',
+        title: '',
+        description: '',
+        price: '',
+      },
     }
   }
   editLocation(locationId) {
@@ -51,7 +56,12 @@ class AdminPage extends Component {
     this.setState({
       view: 'list',
       locationId: null,
-      form: {},
+      form: {
+        key: '',
+        title: '',
+        description: '',
+        price: '',
+      },
     })
   }
   deleteLocation(location) {
@@ -72,7 +82,7 @@ class AdminPage extends Component {
     }
     if (view === 'edit') {
       display = (
-        <form id="fork">
+        <div id="fork">
 
           <label htmlFor="element_1_1">Key</label>
           <div>
@@ -111,7 +121,7 @@ class AdminPage extends Component {
             this.saveLocation();
           }}>Update</button>
 
-        </form>
+      </div>
       )
     } else if (view === 'list') {
       display = (
@@ -120,7 +130,12 @@ class AdminPage extends Component {
             <button onClick={() => {
               this.setState({
                 view: 'edit',
-                form: {},
+                form: {
+                  key: '',
+                  title: '',
+                  description: '',
+                  price: '',
+                },
                 locationId: null,
               })
             }}>Add new location!</button>
