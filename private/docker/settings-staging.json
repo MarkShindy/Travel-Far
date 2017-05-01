@@ -1,0 +1,7 @@
+{
+  "settings-before": "...",
+  "MONGO_URL": {
+    "MONGOLAB": "mongodb://Mark_Shindyapin:1Icemanna,@ds129031.mlab.com:29031/travel-far"
+  },
+  "settings-after": "..."
+}
