@@ -151,10 +151,7 @@ class AdminPage extends Component {
                     <td>{place.updatedAt}</td>
                     <td className="actions">
                     <button onClick={() => {
-                      this.setState({
-                        view: 'edit',
-                        locationId: place._id,
-                      })
+                      this.editLocation(place._id);
                     }}>Edit</button>
                   <button onClick={() => {
                       this.deleteLocation(place);
