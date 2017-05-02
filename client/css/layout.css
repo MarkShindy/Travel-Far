@@ -134,6 +134,9 @@ td:last-child {
     margin-right: -31px;
     background-color: #dee2e6;
 }
+.radiostf label {
+  margin: 5px;
+}
 #login-dropdown-list {
   left: auto;
   top: 26px;

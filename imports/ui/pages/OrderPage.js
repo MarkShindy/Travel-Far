@@ -53,7 +53,7 @@ export default class OrderPage extends Component {
 
           <label htmlFor="element_7">Perferred Leaving Time
           </label>
-          <div>
+          <div className="radiostf">
             <input name="element_7" type="radio" value="1"/>
             <label htmlFor="element_7_1">Morning</label>
 
@@ -84,7 +84,7 @@ export default class OrderPage extends Component {
           <br/>
 
           <label htmlFor="element_8">Ticket Option</label>
-          <div>
+          <div className="radiostf">
 
             <input name="element_8_1" type="checkbox" value="1"/>
             <label htmlFor="element_8_1">Coach</label>
