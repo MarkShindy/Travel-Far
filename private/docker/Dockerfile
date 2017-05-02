@@ -1,6 +1,6 @@
-#### Use nodejs v6.3.1
+#### Use nodejs v4.4.2
 #
-FROM nodesource/xenial:6.3.1
+FROM nodesource/xenial:4.4.2
 
 #### Update apt-get and install supervisor
 #
@@ -32,16 +32,17 @@ RUN tar -xzf bundle.tar.gz
 #
 WORKDIR /usr/src/app/bundle/programs/server
 
-#### Run npm install and npm rebuild
+#### Run yarn install
 #
+RUN rm -rf ./node_modules
 RUN yarn install --force
 
 #### Fix the npm-bcrypt issue..
 # set the working directory to: /usr/src/app/bundle/programs/server/npm/node_modules/meteor/npm-bcrypt
 #
-WORKDIR /usr/src/app/bundle/programs/server/npm/node_modules/meteor/npm-bcrypt
-RUN rm -rf node_modules/bcrypt
-RUN yarn add bcrypt
+# WORKDIR /usr/src/app/bundle/programs/server/npm/node_modules/meteor/npm-bcrypt
+# RUN rm -rf node_modules/bcrypt
+# RUN yarn add bcrypt
 
 #### Set the working directory to /usr/src/app/bundle
 #

@@ -1,5 +1,5 @@
 {
   "MONGO_URL": {
-    "MONGOLAB": "mongodb://Shindyapin:1icemanna@ds129031.mlab.com:29031/travel-far"
+    "MONGOLAB": "mongodb://test:test@ds129031.mlab.com:29031/travel-far"
   }
 }
